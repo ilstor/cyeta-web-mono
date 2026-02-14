@@ -4,7 +4,6 @@ import { Header } from '@/components/Header';
 import { Intro } from '@/components/Intro';
 import { MegaDivider } from '@/components/MegaDivider';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
-import { Article } from '@/components/Article';
 import { Projects } from '@/components/Projects';
 
 export default function Home() {
