@@ -3,7 +3,7 @@ name: Next.js Build with Yarn
 on:
   push:
     branches:
-      - main # Adjust to your default branch name (e.g., master, main)
+      - master
 
 jobs:
   build:
