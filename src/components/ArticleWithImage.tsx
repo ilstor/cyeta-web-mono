@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { ReactNode } from 'react';
-import { Article } from '@/components/Article';
+import { TwoPaneWrapper } from '@/components/TwoPaneWrapper';
 
 type ArticleWithImageProps = {
   imagePosition?: 'left' | 'right';
@@ -12,7 +12,7 @@ type ArticleWithImageProps = {
 export const ArticleWithImage = ({
   imagePosition = 'left',
   imageFileName,
-  imageAlt = 'Article image',
+  imageAlt = 'ArticleWithImage image',
   children,
 }: ArticleWithImageProps) => {
   const imageSrc = imageFileName.startsWith('/')
@@ -28,8 +28,8 @@ export const ArticleWithImage = ({
   const text = <div className="w-full">{children}</div>;
 
   return imagePosition === 'left' ? (
-    <Article left={image} right={text} />
+    <TwoPaneWrapper left={image} right={text} />
   ) : (
-    <Article left={text} right={image} />
+    <TwoPaneWrapper left={text} right={image} />
   );
 };
