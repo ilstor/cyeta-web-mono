@@ -189,3 +189,5 @@ export const allProjects: Project[] = [
     ],
   },
 ];
+
+export const projectsShortlist = allProjects.slice(0, 3);

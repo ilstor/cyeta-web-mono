@@ -3,16 +3,14 @@ import Link from 'next/link';
 import { Article } from '@/components/Article';
 import { Divider } from '@/components/Divider';
 import { TwoPaneWrapper } from '@/components/TwoPaneWrapper';
-import { allProjects, Project } from '@/data/projects';
+import { projectsShortlist, Project } from '@/data/projects';
 import { Paragraph } from '@/components/Paragraph';
 
 type ProjectsProps = {
   projects?: Project[];
 };
 
-export const LatestProjects = ({
-  projects = allProjects.slice(0, 3),
-}: ProjectsProps) => {
+export const LatestProjects = ({ projects = projectsShortlist }: ProjectsProps) => {
   return (
     <Article title="Latest projects">
       <div className="flex flex-col">

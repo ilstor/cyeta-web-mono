@@ -19,13 +19,11 @@ export default function ProjectsPortfolioPage() {
 
         <section className="mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
-            {allProjects.map((project) => (
-              <article key={project.slug} className="w-full">
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="block w-full"
-                  aria-label={`Open project: ${project.title}`}
-                >
+            {allProjects.map((project) => {
+              const href = `/projects/${project.slug}`;
+
+              return (
+                <article key={project.slug} className="w-full">
                   <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
                     <Image
                       src={project.imageSrc}
@@ -34,18 +32,19 @@ export default function ProjectsPortfolioPage() {
                       className="object-cover"
                     />
                   </div>
-                </Link>
 
-                <h3 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="hover:opacity-80 transition-opacity"
-                  >
-                    {project.title}
-                  </Link>
-                </h3>
-              </article>
-            ))}
+                  <h3 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+                    <Link
+                      href={href}
+                      className="block w-full hover:opacity-95 transition-opacity"
+                      aria-label={`Open project: ${project.title}`}
+                    >
+                      {project.title}
+                    </Link>
+                  </h3>
+                </article>
+              );
+            })}
           </div>
         </section>
       </Container>
