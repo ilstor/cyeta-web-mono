@@ -6,7 +6,7 @@ type TwoPaneWrapperProps = {
 };
 
 export const TwoPaneWrapper = ({ left, right }: TwoPaneWrapperProps) => (
-  <section className="w-full bg-white/60 dark:bg-white/10 py-6 flex-col px-6">
+  <section className="w-full bg-white/60 dark:bg-white/10 flex-col">
     <div className="w-full min-h-64 bg-white/60 dark:bg-white/10 flex">
       <div className="flex flex-1 items-stretch gap-6">
         <div className="flex flex-1 items-stretch gap-6">

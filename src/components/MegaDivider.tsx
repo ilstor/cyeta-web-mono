@@ -18,9 +18,9 @@ export const MegaDivider = ({
   ],
 }: MegaDividerProps) => {
   return (
-    <section className="w-full bg-[#1A1A1A]">
+    <section className="w-full  bg-[#1A1A1A] my-6">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="py-10 sm:py-12">
+        <div className="py-3 sm:py-3">
           <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-8 sm:gap-6">
             {items.map((item, idx) => (
               <div key={idx} className="relative">

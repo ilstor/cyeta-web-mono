@@ -3,6 +3,7 @@ import { Intro } from '@/components/Intro';
 import { MegaDivider } from '@/components/MegaDivider';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { LatestProjects } from '@/components/LatestProjects';
+import { Container } from '@/components/Container';
 
 export default function Home() {
   return (
@@ -10,11 +11,17 @@ export default function Home() {
       <div className="w-full">
         <div className="flex flex-col items-center">
           <div className="w-full">
-            <Intro />
+            <Container>
+              <Intro />
+            </Container>
             <MegaDivider />
-            <WhyChooseUs />
+            <Container>
+              <WhyChooseUs />
+            </Container>
             <Divider />
-            <LatestProjects />
+            <Container>
+              <LatestProjects />
+            </Container>
           </div>
         </div>
       </div>

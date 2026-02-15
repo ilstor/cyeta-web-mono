@@ -1,4 +1,5 @@
 export type Project = {
+  slug: string;
   title: string;
   description: string;
   imageSrc: string;
@@ -8,6 +9,7 @@ export type Project = {
 
 export const allProjects: Project[] = [
   {
+    slug: 'residential-deck-construction',
     title: 'Residential Deck Construction',
     description:
       'Short project description goes here. Replace this with the final copy from the design/content.',
@@ -16,6 +18,7 @@ export const allProjects: Project[] = [
     location: 'Auckland',
   },
   {
+    slug: 'luxury-new-build-home-kumeu-auckland',
     title: 'Luxury New Build Home in Kumeu, Auckland',
     description:
       'Short project description goes here. Replace this with the final copy from the design/content.',
@@ -24,6 +27,7 @@ export const allProjects: Project[] = [
     location: 'Kumeu, Auckland',
   },
   {
+    slug: 'renovation-and-extension',
     title: 'Renovation & Extension',
     description:
       'Short project description goes here. Replace this with the final copy from the design/content.',

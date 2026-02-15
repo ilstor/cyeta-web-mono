@@ -1,5 +1,5 @@
-// src/components/Projects.tsx
 import Image from 'next/image';
+import Link from 'next/link';
 import { Article } from '@/components/Article';
 import { Divider } from '@/components/Divider';
 import { allProjects, Project } from '@/data/projects';
@@ -13,7 +13,7 @@ export const LatestProjects = ({ projects = allProjects }: ProjectsProps) => {
     <Article title="Latest projects">
       <div className="flex flex-col">
         {projects.map((project, idx) => (
-          <div key={`${project.title}-${idx}`}>
+          <div key={project.slug}>
             {idx > 0 ? <Divider /> : null}
             <ProjectRow project={project} />
           </div>
@@ -52,15 +52,15 @@ const ProjectRow = ({ project }: { project: Project }) => {
           </p>
 
           <div className="pt-2">
-            <button
-              type="button"
+            <Link
+              href={`/projects/${project.slug}`}
               className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-50 hover:opacity-80"
             >
               View more
               <span aria-hidden className="text-base leading-none">
                 →
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
