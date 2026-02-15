@@ -1,4 +1,6 @@
 // src/components/Footer.tsx
+import Link from 'next/link';
+
 export const Footer = () => (
   <footer className="w-full bg-[#1A1A1A] text-white py-12">
     <div className="mx-auto max-w-7xl px-6">
@@ -44,29 +46,41 @@ export const Footer = () => (
         <nav>
           <ul className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-xs font-medium uppercase tracking-widest">
             <li>
-              <a href="#" className="hover:text-zinc-400 transition-colors">
+              <Link href="/" className="hover:text-zinc-400 transition-colors">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-zinc-400 transition-colors">
+              <Link
+                href="/projects"
+                className="hover:text-zinc-400 transition-colors"
+              >
                 Projects
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-zinc-400 transition-colors">
+              <Link
+                href="/services"
+                className="hover:text-zinc-400 transition-colors"
+              >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-zinc-400 transition-colors">
+              <Link
+                href="/about-us"
+                className="hover:text-zinc-400 transition-colors"
+              >
                 About us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-zinc-400 transition-colors">
+              <Link
+                href="/contact-us"
+                className="hover:text-zinc-400 transition-colors"
+              >
                 Contact us
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

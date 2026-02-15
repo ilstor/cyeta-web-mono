@@ -1,5 +1,6 @@
 // src/components/Header.tsx
 import Link from 'next/link';
+import { Paragraph } from '@/components/Paragraph';
 
 export const Header = () => (
   <header className="w-full">
@@ -25,23 +26,32 @@ export const Header = () => (
             </Link>
           </li>
           <li>
-            <a className="hover:text-zinc-600 transition-colors" href="#">
+            <Link
+              className="hover:text-zinc-600 transition-colors"
+              href="/services"
+            >
               Services
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-zinc-600 transition-colors" href="#">
+            <Link
+              className="hover:text-zinc-600 transition-colors"
+              href="/about-us"
+            >
               About us
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-zinc-600 transition-colors" href="#">
+            <Link
+              className="hover:text-zinc-600 transition-colors"
+              href="/contact-us"
+            >
               Contact us
-            </a>
+            </Link>
           </li>
         </ul>
-        <button className="bg-[#9389e0] text-white px-6 py-2.5 text-[13px] font-medium rounded-sm hover:bg-[#8278d1] transition-colors">
-          Request a Quote
+        <button className="bg-[#9389e0] text-white px-6 py-2.5 text-[13px] font-medium hover:bg-[#8278d1] transition-colors">
+          <Paragraph>Request a Quote</Paragraph>
         </button>
       </div>
     </nav>

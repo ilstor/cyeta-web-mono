@@ -11,7 +11,7 @@ export const Quote = ({
 }: QuoteProps) => {
   return (
     <section className="w-full">
-      <div className="w-full rounded-2xl bg-[#2B2B2B] text-white shadow-[0_18px_45px_rgba(0,0,0,0.35)] p-6 sm:p-8">
+      <div className="w-full bg-[#2B2B2B] text-white shadow-[0_18px_45px_rgba(0,0,0,0.35)] p-6 sm:p-8">
         <header className="mb-5">
           <h2 className="text-base sm:text-lg font-semibold tracking-tight">
             {title}

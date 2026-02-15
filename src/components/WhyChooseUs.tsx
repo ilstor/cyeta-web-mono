@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { TwoPaneWrapper } from '@/components/TwoPaneWrapper';
 import { Article } from '@/components/Article';
+import { Paragraph } from '@/components/Paragraph';
 
 type WhyChooseUsProps = {
   imageLeftFileName?: string;
@@ -42,9 +43,7 @@ export const WhyChooseUs = ({
   const right = (
     <div className="w-full">
       <div className="mb-4">
-        <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-300">
-          {rightIntroText}
-        </p>
+        <Paragraph>{rightIntroText}</Paragraph>
       </div>
 
       <div className="grid grid-cols-2 gap-5">
@@ -67,9 +66,7 @@ const WhyItem = ({ title, text }: { title: string; text: string }) => {
       <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
         {title}
       </h3>
-      <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-300">
-        {text}
-      </p>
+      <Paragraph>{text}</Paragraph>
     </div>
   );
 };
