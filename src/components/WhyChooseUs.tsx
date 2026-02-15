@@ -76,7 +76,7 @@ const WhyItem = ({ title, text }: { title: string; text: string }) => {
 
 const ImageCard = ({ fileName, alt }: { fileName: string; alt: string }) => {
   return (
-    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-zinc-200 dark:bg-zinc-800">
+    <div className="relative aspect-[4/3] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
       <Image src={fileName} alt={alt} fill className="object-cover" />
     </div>
   );

@@ -27,7 +27,7 @@ export const Quote = ({
               <option value="" disabled>
                 Select a service
               </option>
-              <option value="general-building-job">Feneral building job</option>
+              <option value="general-building-job">General building job</option>
               <option value="commercial">Commercial</option>
               <option value="residential">Residential</option>
             </Select>

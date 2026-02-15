@@ -2,47 +2,13 @@
 import Image from 'next/image';
 import { Article } from '@/components/Article';
 import { Divider } from '@/components/Divider';
-
-type Project = {
-  title: string;
-  description: string;
-  imageSrc: string;
-  imageAlt?: string;
-  location?: string;
-};
+import { allProjects, Project } from '@/data/projects';
 
 type ProjectsProps = {
   projects?: Project[];
 };
 
-const allProjects: Project[] = [
-  {
-    title: 'Residential Deck Construction',
-    description:
-      'Short project description goes here. Replace this with the final copy from the design/content.',
-    imageSrc: '/images/projects-1.a0aa19236ecca54f9555.jpg',
-    imageAlt: 'Residential deck construction',
-    location: 'Auckland',
-  },
-  {
-    title: 'Luxury New Build Home in Kumeu, Auckland',
-    description:
-      'Short project description goes here. Replace this with the final copy from the design/content.',
-    imageSrc: '/images/projects-2.77f7f3ce1e5c1f090839.jpg',
-    imageAlt: 'Luxury new build home',
-    location: 'Kumeu, Auckland',
-  },
-  {
-    title: 'Renovation & Extension',
-    description:
-      'Short project description goes here. Replace this with the final copy from the design/content.',
-    imageSrc: '/images/projects-3.98fee79ecd7c013d9120.jpg',
-    imageAlt: 'Renovation project',
-    location: 'Auckland',
-  },
-];
-
-export const Projects = ({ projects = allProjects }: ProjectsProps) => {
+export const LatestProjects = ({ projects = allProjects }: ProjectsProps) => {
   return (
     <Article title="Latest projects">
       <div className="flex flex-col">
@@ -57,11 +23,11 @@ export const Projects = ({ projects = allProjects }: ProjectsProps) => {
   );
 };
 
-function ProjectRow({ project }: { project: Project }) {
+const ProjectRow = ({ project }: { project: Project }) => {
   return (
     <section className="py-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl bg-zinc-200 dark:bg-zinc-800">
+        <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
           <Image
             src={project.imageSrc}
             alt={project.imageAlt ?? project.title}
@@ -100,4 +66,4 @@ function ProjectRow({ project }: { project: Project }) {
       </div>
     </section>
   );
-}
+};

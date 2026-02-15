@@ -1,7 +1,9 @@
 // src/components/Header.tsx
+import Link from 'next/link';
+
 export const Header = () => (
   <header className="w-full">
-    <nav className="mx-auto max-w-[1400px] px-12 py-8 flex items-center justify-between">
+    <nav className="mx-auto max-w-350 px-12 py-8 flex items-center justify-between">
       <div className="flex items-center">
         <span className="text-xl tracking-tight font-normal text-zinc-900">
           (CYETA)
@@ -10,14 +12,17 @@ export const Header = () => (
       <div className="flex items-center gap-10">
         <ul className="flex items-center gap-10 text-[13px] font-medium text-zinc-800">
           <li>
-            <a className="hover:text-zinc-600 transition-colors" href="#">
+            <Link className="hover:text-zinc-600 transition-colors" href="/">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-zinc-600 transition-colors" href="#">
+            <Link
+              className="hover:text-zinc-600 transition-colors"
+              href="/projects"
+            >
               Projects
-            </a>
+            </Link>
           </li>
           <li>
             <a className="hover:text-zinc-600 transition-colors" href="#">
