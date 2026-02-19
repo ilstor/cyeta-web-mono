@@ -2,9 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
 import { Paragraph } from '@/components/Paragraph';
-import { allProjects } from '@/data/projects';
+import { loadProjects } from '@/sanity/load-projects';
+import { urlFor } from '@/sanity/url-for';
 
-export default function ProjectsPortfolioPage() {
+export default async function ProjectsPortfolioPage() {
+  const projects = await loadProjects();
+
   return (
     <main className="flex-1">
       <Container className="py-10">
@@ -19,14 +22,14 @@ export default function ProjectsPortfolioPage() {
 
         <section className="mt-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
-            {allProjects.map((project) => {
-              const href = `/projects/${project.slug}`;
-
+            {projects.map((project) => {
+              const href = `/projects/${project.slug.current}`;
+              const imageSrc = urlFor(project.image)?.url() || '';
               return (
-                <article key={project.slug} className="w-full">
+                <article key={project.slug.current} className="w-full">
                   <div className="relative w-full aspect-[16/9] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
                     <Image
-                      src={project.imageSrc}
+                      src={imageSrc}
                       alt={project.imageAlt ?? project.title}
                       fill
                       className="object-cover"

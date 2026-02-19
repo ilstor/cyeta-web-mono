@@ -4,8 +4,12 @@ import { MegaDivider } from '@/components/MegaDivider';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { LatestProjects } from '@/components/LatestProjects';
 import { Container } from '@/components/Container';
+import { loadProjects } from '@/sanity/load-projects';
 
-export default function Home() {
+export default async function Home() {
+  console.log('Reading staic props');
+  const projects = await loadProjects();
+  console.log('Static props read', projects);
   return (
     <main className="flex-1 grid place-items-center">
       <div className="w-full">
@@ -20,7 +24,7 @@ export default function Home() {
             </Container>
             <Divider />
             <Container>
-              <LatestProjects />
+              <LatestProjects projects={projects} />
             </Container>
           </div>
         </div>

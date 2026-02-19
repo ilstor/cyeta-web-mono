@@ -3,22 +3,27 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/Container';
 import { Paragraph } from '@/components/Paragraph';
-import { allProjects } from '@/data/projects';
+import { loadProject, loadProjects } from '@/sanity/load-projects';
+import { urlFor } from '@/sanity/url-for';
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return allProjects.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  const projects = await loadProjects();
+
+  return projects.map((p) => ({ slug: p.slug.current }));
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
 
-  const project = allProjects.find((p) => p.slug === slug);
-  if (!project) notFound();
+  const project = await loadProject(slug);
+  console.log('before', project);
+  // if (!project) notFound();
 
+  const imageSrc = urlFor(project.image)?.url() || '';
   return (
     <main className="flex-1">
       <Container className="py-10">
@@ -37,7 +42,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="mt-6 border-t border-b border-black/10 dark:border-white/15 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <MetaBlock label="Type" value={project.type} />
+            <MetaBlock label="Type" value={project.briefType} />
             <MetaBlock label="Year" value={String(project.year)} />
             <MetaBlock label="Description" value={project.description} />
           </div>
@@ -45,7 +50,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="mt-8 relative w-full aspect-[16/9] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
           <Image
-            src={project.imageSrc}
+            src={imageSrc}
             alt={project.imageAlt ?? project.title}
             fill
             className="object-cover"
@@ -66,25 +71,30 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </h2>
 
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {project.keyFeatures.map((feature, idx) => (
-              <article key={`${feature.title}-${idx}`} className="w-full">
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-                  <Image
-                    src={feature.imageSrc}
-                    alt={feature.imageAlt ?? feature.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+            {project.keyFeatures?.map((feature, idx) => {
+              const featureImageSrc = feature.image
+                ? urlFor(feature.image || '')?.url()
+                : '';
+              return (
+                <article key={`${feature.title}-${idx}`} className="w-full">
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
+                    <Image
+                      src={featureImageSrc}
+                      alt={(feature.imageAlt ?? feature.title) || ''}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
 
-                <h3 className="mt-4 text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 text-xs leading-5 text-zinc-600 dark:text-zinc-300">
-                  {feature.text}
-                </p>
-              </article>
-            ))}
+                  <h3 className="mt-4 text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-5 text-zinc-600 dark:text-zinc-300">
+                    {feature.text}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </section>
       </Container>
