@@ -79,7 +79,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <article key={`${feature.title}-${idx}`} className="w-full">
                   <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-200 dark:bg-zinc-800">
                     <Image
-                      src={featureImageSrc}
+                      src={featureImageSrc || ''}
                       alt={(feature.imageAlt ?? feature.title) || ''}
                       fill
                       className="object-cover"
