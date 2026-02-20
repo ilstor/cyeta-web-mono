@@ -11,16 +11,15 @@ export const TwoPaneWrapper = ({
   right,
   flip = false,
 }: TwoPaneWrapperProps) => {
-  const first = flip ? right : left;
-  const second = flip ? left : right;
-
   return (
-    <section className="w-full bg-white/60 dark:bg-white/10 flex-col">
-      <div className="w-full min-h-64 bg-white/60 dark:bg-white/10 flex">
-        <div className="flex flex-1 items-stretch gap-6">
-          <div className="flex flex-1 items-stretch gap-6">
-            <div className="w-1/2 min-w-0 flex">{first}</div>
-            <div className="w-1/2 min-w-0 flex">{second}</div>
+    <section className="w-full bg-white/60 dark:bg-white/10">
+      <div className="w-full min-h-64 bg-white/60 dark:bg-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
+          <div className={`min-w-0 ${flip ? 'sm:order-2' : 'sm:order-1'}`}>
+            {left}
+          </div>
+          <div className={`min-w-0 ${flip ? 'sm:order-1' : 'sm:order-2'}`}>
+            {right}
           </div>
         </div>
       </div>
