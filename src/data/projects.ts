@@ -22,7 +22,7 @@ export type Project = {
   keyFeatures: ProjectFeature[];
 };
 
-export const allProjects: Project[] = [
+export const allProjectsLegacy: Project[] = [
   {
     slug: 'residential-deck-construction',
     title: 'Residential Deck Construction',
@@ -190,4 +190,4 @@ export const allProjects: Project[] = [
   },
 ];
 
-export const projectsShortlist = allProjects.slice(0, 3);
+export const projectsShortlistLegacy = allProjectsLegacy.slice(0, 3);
