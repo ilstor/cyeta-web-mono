@@ -34,10 +34,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script
-        src="https://t.contentsquare.net/uxa/36b6ca19c4083.js"
-        async
-      ></script>
+      <head>
+        <title>Cyeta Ltd</title>
+        <script
+          src="https://t.contentsquare.net/uxa/36b6ca19c4083.js"
+          async
+        ></script>
+      </head>
       <body
         className={`${karla.variable} ${anton.variable} ${geistMono.variable} antialiased`}
       >
