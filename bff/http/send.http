@@ -1,0 +1,7 @@
+### Send mail
+POST https://cyeta-web-g2aax.ondigitalocean.app/api/cyeta/send
+Content-Type: application/json
+
+{
+  "name": "dest"
+}

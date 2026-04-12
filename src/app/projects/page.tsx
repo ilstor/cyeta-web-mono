@@ -1,22 +1,12 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
 import { Paragraph } from '@/components/Paragraph';
 import { loadProjects } from '@/sanity/load-projects';
 import { urlFor } from '@/sanity/url-for';
-import { useEffect, useState } from 'react';
-import { Project } from '@/types/sanity.types';
 
-export default function ProjectsPortfolioPage() {
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  useEffect(() => {
-    loadProjects().then((loadedProjects) => {
-      setProjects(loadedProjects);
-    });
-  }, []);
+export default async function ProjectsPortfolioPage() {
+  const projects = await loadProjects();
 
   return (
     <main className="flex-1">
