@@ -1,0 +1,19 @@
+{
+  "permission": {
+    "*": "allow",
+    "path": {
+      "*": "allow"
+    },
+    "bash": {
+      "*": "allow",
+      "rm -rf *": "deny"
+    },
+    "external_directory": "allow",
+    "mcp": {
+      "*": "allow"
+    },
+    "skills": {
+      "*": "allow"
+    }
+  }
+}

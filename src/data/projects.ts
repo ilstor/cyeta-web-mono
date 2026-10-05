@@ -20,6 +20,7 @@ export type Project = {
   location?: string;
 
   keyFeatures: ProjectFeature[];
+
 };
 
 export const allProjectsLegacy: Project[] = [
