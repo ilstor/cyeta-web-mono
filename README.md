@@ -27,7 +27,9 @@ yarn typegen          # re-extract the schema, regenerate types, copy them into 
 
 Per-app overrides (`tsconfig`, eslint, prettier) stay inside each app — the two
 apps intentionally use different formatting rules, so there is no root
-prettier config.
+prettier config. `yarn lint` is not run in CI: `apps/web` has 8 pre-existing
+`react/no-unescaped-entities` errors and 2 unused-import warnings that predate
+this repo (the old CI only built).
 
 ## Types
 
@@ -35,6 +37,13 @@ prettier config.
 `apps/web/src/types/sanity.types.ts` is a copy, kept in sync with
 `yarn typegen` (`sanity schema extract` → `sanity typegen generate` →
 `scripts/sync-types.mjs`).
+
+> Caveat: the checked-in generated types predate sanity 5.10. Regenerating today
+> makes every schema field optional (`?`) even though the schema marks it
+> `required()`, which breaks `apps/web` typecheck (4 errors in
+> `LatestProjects.tsx`) — so `yarn typegen` currently produces a diff that must
+> be reconciled by tightening the web code or the typegen config, not committed
+> blindly.
 
 ## Deploy
 

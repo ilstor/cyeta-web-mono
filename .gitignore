@@ -9,11 +9,11 @@ node_modules/
 !.yarn/versions
 
 # build output
-/.next/
-/out/
-/dist
-/.sanity/
-/build
+.next/
+out/
+dist/
+.sanity/
+build/
 *.tsbuildinfo
 next-env.d.ts
 

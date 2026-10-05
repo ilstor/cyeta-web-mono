@@ -13,10 +13,11 @@ with a JSON body, e.g. `{"name": "dest"}` → `{"body": "Hello awesome dest!"}`.
 |---|---|
 | `packages/cyeta/send/entry.js` | Function source — exports `main(args)`, returns `{ body }` |
 | `http/send.http` | REST-client example request against the live URL |
+| `project.yml` | DO Functions manifest — required by `doctl` to deploy |
 | `do.key` | DO Functions auth token (`dop_v1_…`) — **secret, committed here; rotate if it leaked** |
 
-Note: this copy is missing `project.yml`, which `doctl` requires to deploy (see below).
-The original working copy lives in the sibling repo `cyeta-bff`.
+This directory is self-contained and deployable as-is (`doctl serverless deploy .`).
+The original working copy also lives in the sibling repo `cyeta-bff`.
 
 ## Recreating the app from scratch
 
