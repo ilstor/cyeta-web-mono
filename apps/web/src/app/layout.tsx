@@ -1,0 +1,53 @@
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import { Geist_Mono } from 'next/font/google';
+import './globals.css';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+
+const karla = localFont({
+  src: '../../public/fonts/Karla.5f661b07fede4f922b2a.ttf',
+  variable: '--font-karla',
+  display: 'swap',
+});
+
+const anton = localFont({
+  src: '../../public/fonts/Anton-Regular.f49da084c9ff8ff47c4d.ttf',
+  variable: '--font-anton',
+  display: 'swap',
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+export const metadata: Metadata = {
+  title: 'Cyeta Ltd',
+  description: 'Cyeta Ltd',
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <title>Cyeta Ltd</title>
+      </head>
+      <body
+        className={`${karla.variable} ${anton.variable} ${geistMono.variable} antialiased`}
+      >
+        <div className="min-h-screen flex flex-col">
+          <Header />
+
+          {children}
+
+          <Footer />
+        </div>
+      </body>
+    </html>
+  );
+}

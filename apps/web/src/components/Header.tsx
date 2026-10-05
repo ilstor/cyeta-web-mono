@@ -1,0 +1,59 @@
+// src/components/Header.tsx
+import Link from 'next/link';
+import { Paragraph } from '@/components/Paragraph';
+
+export const Header = () => (
+  <header className="w-full">
+    <nav className="mx-auto max-w-350 px-12 py-8 flex items-center justify-between">
+      <div className="flex items-center">
+        <span className="text-xl tracking-tight font-normal text-zinc-900">
+          (CYETA)
+        </span>
+      </div>
+      <div className="flex items-center gap-10">
+        <ul className="flex items-center gap-10 text-[13px] font-medium text-zinc-800">
+          <li>
+            <Link className="hover:text-zinc-600 transition-colors" href="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-zinc-600 transition-colors"
+              href="/projects"
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-zinc-600 transition-colors"
+              href="/services"
+            >
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-zinc-600 transition-colors"
+              href="/about-us"
+            >
+              About us
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-zinc-600 transition-colors"
+              href="/contact-us"
+            >
+              Contact us
+            </Link>
+          </li>
+        </ul>
+        <button className="bg-[#9389e0] text-white px-6 py-2.5 text-[13px] font-medium hover:bg-[#8278d1] transition-colors">
+          <Paragraph>Request a Quote</Paragraph>
+        </button>
+      </div>
+    </nav>
+  </header>
+);
