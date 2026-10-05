@@ -41,12 +41,12 @@ export const projectType = defineType({
 
     defineField({
       name: 'description',
-      type: 'string',
+      type: 'text',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'overview',
-      type: 'string',
+      type: 'text',
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -62,7 +62,7 @@ export const projectType = defineType({
           type: 'object',
           fields: [
             {name: 'title', type: 'string'},
-            {name: 'text', type: 'string'},
+            {name: 'text', type: 'text'},
             {name: 'image', type: 'image'},
             {name: 'imageAlt', type: 'string'},
           ],
