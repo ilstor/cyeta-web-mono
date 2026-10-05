@@ -1,0 +1,22 @@
+{
+  "name": "cyeta-web-mono",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "yarn workspace @cyeta/web dev",
+    "dev:cms": "yarn workspace @cyeta/cms dev",
+    "build": "yarn build:cms && yarn build:web",
+    "build:web": "yarn workspace @cyeta/web build",
+    "build:cms": "yarn workspace @cyeta/cms build",
+    "lint": "yarn workspaces run lint",
+    "typecheck": "yarn workspaces run typecheck",
+    "typegen": "yarn workspace @cyeta/cms typegen && node scripts/sync-types.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
