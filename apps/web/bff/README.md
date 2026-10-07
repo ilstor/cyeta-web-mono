@@ -14,7 +14,8 @@ with a JSON body, e.g. `{"name": "dest"}` → `{"body": "Hello awesome dest!"}`.
 | `packages/cyeta/send/entry.js` | Function source — exports `main(args)`, returns `{ body }` |
 | `http/send.http` | REST-client example request against the live URL |
 | `project.yml` | DO Functions manifest — required by `doctl` to deploy |
-| `do.key` | DO Functions auth token (`dop_v1_…`) — **secret, committed here; rotate if it leaked** |
+| `do.key` | DO Functions auth token (`dop_v1_…`) — **local only, gitignored**; copy `do.key.example` to `do.key` |
+| `do.key.example` | Placeholder describing the token above |
 
 This directory is self-contained and deployable as-is (`doctl serverless deploy .`).
 The original working copy also lives in the sibling repo `cyeta-bff`.

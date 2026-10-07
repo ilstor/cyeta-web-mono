@@ -54,12 +54,18 @@ this repo (the old CI only built).
 - **bff**: `cd apps/web/bff && doctl serverless deploy .` — see
   `apps/web/bff/README.md`.
 
-> `apps/web/bff/do.key` is a DigitalOcean token committed to git (also in the
-> imported history). Treat it as public and rotate it.
+> The DigitalOcean token that used to live in `apps/web/bff/do.key` is public in
+> the history of `ilstor/cyeta-web`. It has been removed from this repo's history
+> and the file is gitignored — the token itself should still be rotated.
 
 ## History
 
 This repo was assembled from `ilstor/cyeta-web` (was `master`) and
 `ilstor/studio-cyeta-cms` (was `main`) with `git subtree add`, so the original
-commits of both projects are intact in `git log`. `origin/feature/pages` from
-the old web repo was not imported.
+commits of both projects are intact in `git log` (messages, authors and dates).
+`origin/feature/pages` from the old web repo was not imported.
+
+> The imported history was then rewritten with `git filter-branch` to drop
+> `bff/do.key` (a DigitalOcean token), which GitHub push protection refuses to
+> accept. Original SHAs of the imported commits therefore differ from those in
+> the old repos — they are unchanged in `ilstor/cyeta-web`.

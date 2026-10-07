@@ -28,6 +28,7 @@ yarn-error.log*
 # env & secrets
 .env*
 *.local
+apps/web/bff/do.key
 
 # editor / OS
 .DS_Store
