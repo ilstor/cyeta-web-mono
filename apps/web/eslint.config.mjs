@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored DigitalOcean Functions app - separate runtime, not app source.
+    "bff/**",
   ]),
   {
     rules: {

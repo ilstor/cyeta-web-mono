@@ -27,17 +27,17 @@ export default function AboutPage() {
               <Paragraph>
                 Welcome to Cyeta Ltd. With a collective experience of numerous
                 years in the construction industry, our team is not just a group
-                of experts; we're a family dedicated to making your dreams a
+                of experts; we’re a family dedicated to making your dreams a
                 reality. At Cyeta Ltd, we believe that construction is not just
-                about building structures; it's about building relationships.
+                about building structures; it’s about building relationships.
               </Paragraph>
 
               <Paragraph>
-                Our approach is simple: "Make it nice, make it fast." We
+                Our approach is simple: “Make it nice, make it fast.” We
                 understand that your time is valuable, and so is a job well
                 done. Our team thrives on effective communication, ensuring we
                 not only meet but exceed your expectations. We take pride in
-                being a company you'll remember and recommend - not just for the
+                being a company you’ll remember and recommend - not just for the
                 quality of our work but for the friendly and collaborative
                 experience we provide.
               </Paragraph>
@@ -47,12 +47,12 @@ export default function AboutPage() {
                 artistic thinking. Every member of our team brings a creative
                 touch to the construction process, allowing us to find
                 innovative solutions and think beyond the standard approaches.
-                We're not just builders; we're experts who turn your ideas into
+                We’re not just builders; we’re experts who turn your ideas into
                 beautifully crafted spaces.
               </Paragraph>
 
               <Paragraph>
-                Our commitment goes beyond completing projects; it's about
+                Our commitment goes beyond completing projects; it’s about
                 understanding your needs and bringing them to life. We work
                 closely with you, utilising our artful approach to deliver
                 results that stand out. Explore the difference a friendly and

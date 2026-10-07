@@ -27,9 +27,10 @@ yarn typegen          # re-extract the schema, regenerate types, copy them into 
 
 Per-app overrides (`tsconfig`, eslint, prettier) stay inside each app — the two
 apps intentionally use different formatting rules, so there is no root
-prettier config. `yarn lint` is not run in CI: `apps/web` has 8 pre-existing
-`react/no-unescaped-entities` errors and 2 unused-import warnings that predate
-this repo (the old CI only built).
+prettier config. `apps/web/eslint.config.mjs` ignores `bff/**` (vendored
+DigitalOcean function, separate runtime). `yarn lint` runs in CI; the only
+remaining lint output is one warning inside Sanity's generated
+`apps/cms/sanity.types.ts`.
 
 ## Types
 
